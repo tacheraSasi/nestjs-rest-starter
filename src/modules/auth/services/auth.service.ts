@@ -10,6 +10,7 @@ import { ChangePasswordDto } from '../dto/change-password.dto';
 import { Public } from 'src/modules/auth/decorator/public.decorator';
 import { JwtService } from '@nestjs/jwt';
 import { User } from 'src/modules/users/entities/user.entity';
+import { ExcludeFromObject } from 'src/common/dto/sanitize-response.dto';
 
 @Injectable()
 export class AuthService {
@@ -23,7 +24,7 @@ export class AuthService {
     if (!user || !(await user.comparePassword(pass))) {
       throw new UnauthorizedException('Invalid credentials');
     }
-    return user;
+    return ExcludeFromObject(user,["password"]);
   }
 
   async forgotPassword(dto: ForgotPasswordDto) {
