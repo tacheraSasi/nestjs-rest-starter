@@ -11,7 +11,7 @@ export class SeederService {
   constructor(
     private readonly entityManager: EntityManager,
     private readonly logger: LoggerService,
-  ) {}
+  ) { }
 
   async seed() {
     await Promise.all([this.#createRoles(), this.#createUsers()]);
@@ -70,15 +70,15 @@ export class SeederService {
       {
         fullName: 'Admin User',
         phoneNumber: '1234567890',
-        email: 'admin@ipfsoftwares.com',
-        password: 'admin@ipfsoftwares',
+        email: 'admin@ekilie.com',
+        password: 'admin@ekilie',
         role: roleMap['Admin'],
       },
       {
         fullName: 'Manager User',
         phoneNumber: '0987654321',
-        email: 'manager@ipfsoftwares.com',
-        password: 'manager@ipfsoftwares',
+        email: 'manager@ekilie.com',
+        password: 'manager@ekilie',
         role: roleMap['Manager'],
       },
     ];
