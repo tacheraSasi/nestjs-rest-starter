@@ -1,3 +1,8 @@
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
 # Git
 .git
 .gitignore
@@ -20,5 +25,7 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Docker
-Dockerfile
+# Others
+README.md
+LICENSE
+docs/
