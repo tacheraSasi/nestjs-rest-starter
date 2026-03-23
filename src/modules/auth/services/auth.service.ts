@@ -24,7 +24,7 @@ export class AuthService {
     if (!user || !(await user.comparePassword(pass))) {
       throw new UnauthorizedException('Invalid credentials');
     }
-    return ExcludeFromObject(user,["password"]);
+    return user;
   }
 
   async forgotPassword(dto: ForgotPasswordDto) {
